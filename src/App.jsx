@@ -2,6 +2,7 @@ import './App.css'
 import Brands from './components/Brands'
 import Carousel from './components/Carousel'
 import Comments from './components/Comments'
+import FAQ from './components/FAQ'
 import Features from './components/Features'
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -21,6 +22,7 @@ function App() {
       <Carousel />
       <Transfer />
       <Comments />
+      <FAQ />
       <Footer />
 
       
