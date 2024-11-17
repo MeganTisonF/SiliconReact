@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 :root{
-    --color-dark:#0B0F19 ;
+    --color-dark:#0B0F19;
     --color-gray-600: #9397AD;
     --color-gray-300:#E2E5F1;
     --color-diffrentgray: #585C7B;
@@ -14,11 +14,22 @@
     --color-carousel:#F1F6D9;
     --color-white: #FFFFFF;
 
+    --btn-download-app-dark:#000;
+
+    --btn-circle-background-white:#FFF;
+    --btn-circle-text-dark:#000;
+
+    --color-gray-700-phero: #565973;
+    --color-logo-text:#000;
+    --color-faqh6:#000;
+
     
     --container-padding: 1rem;
     --transition-time: all 0.2s;
 
     --section-spacing: 4rem;
+
+    --namecolor:#000;
 
     --br-m: 0.375em;
     --br-l: 0.5em;
@@ -41,6 +52,68 @@
 body, section, div, header, footer, main, aside, nav, blockquote, p, span{
     margin: 0;
     padding: 0;
+}
+
+html {
+    color-scheme: light;
+}
+
+
+.dark {
+    color-scheme: dark;
+
+    --color-dark: #FFF;  
+    --color-white: #000; 
+
+    --color-gray-600: #E2E5F1; 
+    --color-gray-300: #E2E5F1; 
+    --color-diffrentgray: #B4B7C9; 
+    --color-lightergrey: #9397AD; 
+    --color-gray-700: #B4B7C9; 
+
+    --color-primary: #6366F1; 
+    --color-yellow: #ffffff; 
+    --color-carousel: #FFF(0, 39%, 94%); 
+
+    --btn-download-app-dark:#565973;
+
+    --btn-circle-background-white:#565973;
+    --btn-circle-text-dark:#FFF;
+
+    --color-gray-700-phero:#E2E5F1;
+    --color-faqh6:#000;
+
+    
+    
+}
+
+
+html.dark #hero {
+    background: #FFF; 
+    background: linear-gradient(0deg, rgba(0,0,0,0.922) 14%, rgba(50,50,50,0.485) 42%, rgba(0,0,0,0) 83%);
+    color: #FFF(0, 39%, 94%); 
+}
+
+html.dark #faq .faq-section-box {
+    padding: 1rem 0; 
+    border-bottom: 1px solid #707173f7; 
+    box-shadow: 0 4px 8px #f9f9fa(0, 20%, 98%); 
+    border-radius: 5px; 
+    background-color: hsla(230, 11%, 89%, 0.553); 
+    
+}
+
+
+
+html.dark #faq .faq-text{
+    color: #000;
+}
+
+
+html.dark #subform .box {
+    background-color: rgba(0, 0, 0, 0.037); 
+    border: 1px solid #000;
+    
 }
 
 
@@ -138,6 +211,12 @@ a:hover{
     text-decoration: underline;
 }
 
+.logo{
+    display: flex;
+    gap: 0.5rem;
+    
+}
+
 
 .btn-primary{
     background-color: var(--color-primary);
@@ -161,8 +240,7 @@ a:hover{
 }
 
 .btn-download-app{
-    background-color: var(--color-dark);
-    color: var(--color-white);
+    background-color: var(--btn-download-app-dark);
     border-radius: 8px;
     padding: 12px 25px;
     display: flex;
@@ -170,6 +248,10 @@ a:hover{
     align-items: center;
     text-decoration: none;
 }
+
+
+
+
 
 .btn-download-app:hover{
     background-color: var(--color-gray-600);
@@ -184,16 +266,17 @@ a:hover{
 }
 
 .btn-cirle {
-    height: 100px;
-    width: 100px;
+    height: 30px;
+    width: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     border: 1px solid var(--color-border-gray);
-    background-color: var(--color-white);
-    color: var(--color-dark);
+    background-color: var(--btn-circle-background-white);
+    color: var(--btn-circle-text-dark);
 }
+
 
 
 
@@ -217,11 +300,15 @@ a:hover{
     display: inline-block;
     width: 45px;
     height: 25px;
+
+    input [type="checkbox"] {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
 }
 
-.toggle-switch input {
-    opacity: 0;
-}
+
 
 .toggle-switch input:checked + .slider {
     background-color: var(--color-yellow);
@@ -392,10 +479,18 @@ footer {
         gap: 3rem;
         
     }
+
     .navbar {
         display: block;
     } 
 
+
+    .nav-link {
+        margin-right: 20px;
+    }
+
+
+    
 
     #auth-signin {
         display: block;
@@ -421,7 +516,7 @@ footer {
     }
 
     p{
-        color: var(--color-gray-700);
+        color: var(--color-gray-700-phero);
     }
 
     .container{
@@ -718,6 +813,8 @@ footer {
     
     .payment img{
         width: 40px;
+        background: #FFF;
+        border-radius: 8%;
 
     }
     .buttons {
@@ -735,42 +832,112 @@ footer {
 
 }
 
-#comments { 
-    padding-top: 40px;
-    padding-bottom: 40px;
-   
-    .comments-flex {
+#testimonials {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+
+    .container {
         display: flex;
-        justify-content: center; 
+        justify-content: flex-start;
+        flex-wrap: wrap; /* Gör layouten responsiv */
     }
 
-    .headline{
-       margin-right: 210px;
-       margin-top: -50px;
-       max-width: 40ch 
+    h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-right: 40px;
+    }
+
+    .first-column {
+        max-width: 50ch;
+        margin-top: -3rem;
+        
+    }
+
+    .second-column {
+        display: flex;
+        justify-content: flex-start; 
+        flex-wrap: wrap;   
     }
     
-    .review1,
-    .review2 {
+    
+    
+
+    .testimonial {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
         position: relative;
-        width: 100%; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
         max-width: 350px; 
-    }
-    
-    .review1 img,
-    .review2 img {
-        width: 100%; 
-        height: auto; 
+        display: flex;
+        flex-direction: column;
+        margin-left: 3.1rem;
     }
 
-    .quotes {        
+    .quote-icon {
+        background-color: #6366F1;
+        width: 40px;
+        height: 40px;
+        border-radius: 30%;
+        display: grid;
+        place-items: center;
         position: absolute;
-        top: -5%;
-        left: 10px;
-        width: 50px; /* Justera storlek på citattecknen */
-        height: auto;
+        top: -15px;
+        left: 20px;
+        color: white;
+        font-size: 16px;
     }
+
+    .star-rating {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: gold;
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .testimonial-author .profile {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .testimonial-author .author {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .testimonial-author .author .name {
+        font-size: 1rem;
+        font-weight: 800;
+        color: var(--namecolor);
+
+    }
+
+    .comment{
+        color: var(--namecolor);
+    }
+
+    .testimonial-author .role {
+        color: gray;
+    }
+
 }
+
+
+
+
+
+
+
 
 #faq {
     padding: 3rem;
@@ -801,6 +968,10 @@ footer {
         gap: 1rem; 
         padding-bottom: 3.5rem;
     }
+
+    .h6{
+        color: var(--color-faqh6);
+    }
     
     
     .questions-options {
@@ -814,24 +985,21 @@ footer {
         padding: 1rem 0; /* Utrymme runt varje FAQ-box */
         border-bottom: 1px solid #ddd; /* Linje mellan posterna */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-        border-radius: 5px; /* Valfritt: rundade hörn */
+        border-radius: 5px; 
         background-color: #fff; 
         
     }
     
     .faq-header {
         display: flex;
-        justify-content: space-between; /* Rubrik till vänster och ikon till höger */
+        justify-content: space-between; 
         align-items: center; 
         margin: 0 1rem; 
         cursor: pointer;
         transition: background-color 0.2s;
     }
 
-    .faq-header:hover {
-        background-color: #f5f5f5;
-
-    }
+    
 
     .faq-header .headline {
         flex-grow: 1; /* Rubriken tar upp så mycket utrymme som möjligt */
@@ -847,7 +1015,7 @@ footer {
         color: var(--color-gray-700);
         padding-bottom: 20px;
         padding-top: 10px;
-        max-width: 43ch /* Ändrar hur texten ska ligga*/
+        max-width: 43ch 
         
     }
     
@@ -856,8 +1024,13 @@ footer {
         margin: 0 1rem; /* Marginal på vänster och höger sida */
         padding: 1rem;  /* Se till att den har tillräckligt med utrymme för att synas */
     }
+  
+}
 
 
+
+
+#subform{
 
     .box {
         grid-area: box;
@@ -878,6 +1051,7 @@ footer {
         top: 10px;
         left: 190px;
     }
+
     .minih4{
         position: absolute;
         top: 10px;
@@ -885,347 +1059,85 @@ footer {
         max-width: 50ch;
     }
 
-    .input-group{
+    
+
+    
+    .form-input:focus {
+    color: #000; 
+    border-color: #000; 
+    background-color: #FFF; 
+    outline: none; 
+    }
+
+
+    .inputgroup{
         position: absolute;
         top: -10px;
-        left: 830px;
-
+        left: 380px;
     }
 
-    .btn{
-        background-color: #6366F1;
-        color: #fff;
-        padding: .8em 2em;
-        border: 0;
-        font-size: 1rem;
-
-        border-radius: .5em;
-    }
-    
-    .form-input{
-        border: 1px solid #747474;
-        font-size: 1rem;
-        padding: .3em;
-
-        border-radius: .5em;
-    }
-
-    .input-group{
-        display: flex;
-
-        .form-input{
-            border-radius: .5em 0 0 .5em;
-        }
-        
-        .btn{
-            border-radius: 0 .5em .5em 0;
-        }
-    }
-
-    .input-group{
+    .inputgroup {
         position: relative;
-    }
-
-    .icon{
-        position: absolute;
-        top: 50%;
-        left: .5rem;
-
-        transform: translateY(-50%);
-    }
-
-    .email{
-        padding-left: 3rem;
-    }
-  
-}
-
-#newhero .container {
-    
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding-top: 3rem;
-    padding-bottom: 1rem;
-
-    
-
-    .logo,
-    .main-menu{
-        margin-right: auto; 
-    }
-
-    .navbar {
-        display: flex; 
-    }
-
-    .btn-toggle-switch,
-    .btn-primary {
-    margin-left: auto; 
-    }
-
-    .btn-toggle-switch {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .btn-primary {
-        background-color: var(--color-primary);
-        color: var(--color-white);
-        border-radius: 8px;
-        padding: 12px 25px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        margin-left: 10px; 
-    }
-
-
-    .btn-primary:hover {
-        background-color: var(--color-gray-600);
-        color: var(--color-white);
-        text-decoration: none;
-    }
-    
-    .btn-primary i {
-        margin-right: 0.5rem;
-    }
-    
-    .nav-link {
-        color: var(--color-dark);
-        font-weight: 600;
-        text-decoration: none;
-    }
-    
-    .nav-link:hover {
-        color: var(--color-primary);
-        text-decoration: underline;
-    }
-}
-
-
-#newhero2 {
-
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: auto 1fr; 
-    grid-template-areas: 
-        "headline headline"
-        "content consultation";
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 2rem;
-
-
-    .headline {
-        grid-area: headline;
-        margin-top: -1.5rem;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .content{
-        margin-top: -1rem;
-    }
-
-
-   
-    .contact-flex{
-        display: flex;
-        text-align: start;
-        align-items: flex-start;
-        gap: 0rem; 
-        margin-left: -2rem;
-    }
-    
-    .icon-container{
-        padding: 1.5rem;
-        border-radius: var(--br-1);
-        flex-shrink: 0; 
-        margin-right: 0; 
-    }
-
-    .icon-container img{
-        width: 60px;
-        height: 60px;
-    }
-
-    .message-container {
         display: flex;
         align-items: center; 
-        gap: 0.5rem; 
-    }
-    
-    .text-s {
-        color: var(--color-gray-600);
-    }
-    
-    .text-m {
-        color: var(--color-gray-700);
-        margin-top: -1.5rem;
-        max-width: 36ch /* Ändrar hur texten ska ligga*/
+        max-width: 400px; 
+        margin: 0 auto; 
     }
 
-    .p-extra {
+    .form-input {
+        width: 65%; 
+        border: 1px solid #747474;
+        background-color: #FFF;
         font-size: 1rem;
-        font-weight: 600; 
-        color: var(--color-primary)
+        padding: 0.6em; 
+        border-radius: 0.5em 0 0 0.5em; 
+        box-sizing: border-box; /* Ser till att padding inte påverkar bredd */
     }
-
-    .h1{
-        margin-bottom: 2rem;
-    }
-
-    .text1{
+      
+    .btn {
+        width: 35%; 
+        background-color: #6366F1;
+        color: #FFF;
+        padding: 0.7em;
+        border: 0;
         font-size: 1rem;
-        font-weight: 600; /*Semibold*/
+        border-radius: 0 0.5em 0.5em 0; /* Rundar endast högra hörnen */
+        cursor: pointer; /* Visar att knappen är klickbar */
+        text-align: center; 
     }
-
-    .consultation {
-        grid-area: consultation;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 4rem;
-        border: 1px solid var(--color-gray-300);
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+      
+    .btn:hover {
+        background-color: #4a54d8; 
     }
-
-    
-
-    .comment-form{
-        flex: 1; /* Låter input-fältet ta upp så mycket utrymme som möjligt */
-        margin-top: -1rem;
-        display: flex;
-        gap: 1rem;
-        position: relative; 
-    }
-
-    .comment-input{
-      flex: 1;
-      padding: .5em;
-      font-size: 1rem; 
-      border: 1px solid #9397AD;
-      border-radius: .5em;
-    }
-
-    .spec{
-        position: relative;
-        display: flex;
-        align-items: center;
-    }
-
-    .btn-round {
+      
+    .icon {
         position: absolute;
         top: 50%;
-        right: 0.5rem; 
-        top: 1.2rem;
+        left: 0.5rem;
         transform: translateY(-50%);
-        background-color: transparent; /* Gör bakgrunden helt transparent */
-        border: 0;
-        width: 30px;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        cursor: pointer;
+        width: 20px; 
+        height: 20px; 
     }
-
-
-
-    .btn-appointment{
-        font-size: 16px;
-        margin-top: 9rem;
-        padding: .7em 4em;
-        border: 0;
-        background-color:#6366F1;
-        color: #FFF;
-        border-radius: .5em;
-        /*text-transform: uppercase;*/
-        font-weight: 600;    
+      
+    .email {
+        padding-left: 3rem; 
     }
-
-
-    .btn-appointment:hover{
-        background-color: var(--color-gray-600);
-        color: var(--color-white);
-        text-decoration: none;
-        
+      
+    .invalid-input {
+        position: absolute; /* Placera felmeddelandet utan att påverka layouten */
+        bottom: -1.5rem; /* Placera precis under inputfältet */
+        left: 0;
+        color: firebrick;
+        font-size: 0.9rem;
+        margin: 0;
     }
-
+      
+    .form-input.error {
+        border-color: firebrick; 
+    }
+      
 }
 
-#mapsection{
-
-    
-    .container {
-        display: flex;
-        justify-content: center; 
-        align-items: center; /* Vertikal centrering */
-        margin-top: 10rem;
-        gap: 10rem;
-        margin-bottom: 20rem;
-    }
-
-    .mappic{
-        margin-right: 10rem;
-    }
-
-    .mappic img{
-        width: 110%;
-        height: auto;
-        border-radius: 1%;
-    }
-
-    
-    .map-grid {
-        margin-top: -2rem;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .h4{
-        margin-bottom: 1rem;
-    }
-    
-    .flex {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .bold-text {
-        font-weight: bold;
-    }
-    
-
-    
-    .icon-container {
-        width: 30px;
-        flex-shrink: 0;
-    }
-
-   
-    .text-m {
-        display: flex;
-        align-items: center;
-        font-size: 1rem;
-        color: var(--color-gray-700);
-    }
-
-    .icon-cards{
-        padding-top: 2rem;
-    }
-        
- 
-}
 
 
 

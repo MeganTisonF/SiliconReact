@@ -3,12 +3,13 @@ import BoxCall from '../images/icon-boxcall.svg';
 import BoxText from '../images/icon-boxtext.svg';
 import ArrowUp from '../images/arrow up.svg';
 import ArrowDown from '../images/arrow.svg';
-import Notification from '../images/notification.svg';
-import Email from '../images/email.svg';
+
+
 
 const FAQ = () => {
   const [faqs, setFaqs] = useState([]); // Håll API-data
   const [error, setError] = useState(null); // Hantera fel
+ 
 
   // Hämta FAQ-data från API:t
   useEffect(() => {
@@ -28,6 +29,8 @@ const FAQ = () => {
       )
     );
   };
+
+  
 
   return (
     <section id="faq">
@@ -72,29 +75,12 @@ const FAQ = () => {
             <p>Loading FAQs...</p>
           )}
         </div>
-
-        <div className="box">
-          <img className="not" src={Notification} alt="Notification" />
-          <div className="minih4">
-            <h4 className="h4">
-              Subscribe to our newsletter to stay informed about latest updates
-            </h4>
-          </div>
-          <div className="input-group">
-            <img className="icon" src={Email} alt="Email Icon" />
-            <input
-              className="form-input email"
-              type="email"
-              placeholder="Your Email"
-            />
-            <button className="btn">Subscribe</button>
-          </div>
-        </div>
       </div>
     </section>
   );
 };
 
 export default FAQ;
+
 
 

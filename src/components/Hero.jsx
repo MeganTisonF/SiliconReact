@@ -19,9 +19,9 @@ const Hero = () => {
                     </div> 
     
                     <a href="#" className="discover-more">
-                        <span className="btn-circle">
-                            <i className="fa-solid fa-circle-chevron-down"></i>
-                        </span>
+                            <button class="btn-cirle">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
                         <span>Discover more</span>
                     </a>
                 </div> 
